@@ -13,16 +13,15 @@ namespace RPSLS
         public Human playerOne;
         public Player playerTwo;
         public ScoreBoard scoreBoard;
+        public bool winnerFound;
 
         public GamePlay()
         {
             playerOne = new Human("Player One");
             playerTwo = new Human("Player Two");
+            winnerFound = false;
             DetermineGameMode();
-            GetPlayerSelection();
-            CalculateResults();
-            scoreBoard = new ScoreBoard(playerOne.playerName, playerTwo.playerName); 
-
+            gamePlayMaster();
         }
 
         // Member Methods
@@ -67,7 +66,6 @@ namespace RPSLS
             Console.WriteLine(playerTwo.playerName + " Has Chosen");
             playerTwo.playerSelection = playerTwo.GetUserSelection();
             // validate selection1
-            Console.WriteLine("P1 S: " + playerOne.playerSelection + " P2 S: " + playerTwo.playerSelection);
             // set selection equal to playerSelection
         }
         public void CalculateResults()
@@ -86,9 +84,35 @@ namespace RPSLS
             }
             else if (resultCalc == 0)
             {
-                Console.WriteLine("It's a TIE!");
+                Console.WriteLine("It's a TIE!");   
             }
         }
+        public void gamePlayMaster()
+        {
+            scoreBoard = new ScoreBoard(playerOne.playerName, playerTwo.playerName);
+            while (!winnerFound)
+            {
+                GetPlayerSelection();
+                CalculateResults();
+                scoreBoard.DisplayScoreBoard();
+                CheckWinConditions();
+            }
+        }
+        public bool CheckWinConditions()
+        {
+            if (scoreBoard.playerOneScore == 2)
+            {
+                winnerFound = true;
+                Console.WriteLine("Congratulations " + playerOne.playerName + " you won!");
+            }
+            else if (scoreBoard.playerTwoScore == 2)
+            {
+                winnerFound = true;
+                Console.WriteLine("Congratulations " + playerTwo.playerName + " you won!");
+            }
+            return winnerFound;
+        }
+
 
     }
 }
