@@ -23,6 +23,7 @@ namespace RPSLS
             winnerFound = false;
             DetermineGameMode();
             gamePlayMaster();
+            GetPlayAgain();
         }
 
         // Member Methods
@@ -40,6 +41,25 @@ namespace RPSLS
             {
                 Console.WriteLine("You have entered an invalid selection. Please try again. Example: 1");
                 DetermineGameMode();
+            }
+
+        }
+        public void GetPlayAgain()
+        {
+            Console.WriteLine("Would you liket to play again?: [1] Yes [2] No");
+            string userInput = Console.ReadLine();
+            if (userInput.Trim() == "1")
+            {
+                GamePlay runGame = new GamePlay();
+            }
+            else if (userInput != "1" && userInput != "2")
+            {
+                Console.WriteLine("You have entered an invalid selection. Please try again. Example: 1");
+                DetermineGameMode();
+            }
+            else
+            {
+                Environment.Exit(0);
             }
 
         }
