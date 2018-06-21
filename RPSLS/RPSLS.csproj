@@ -43,9 +43,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameSetup.cs" />
+    <Compile Include="Gesture.cs" />
+    <Compile Include="LizardGesture.cs" />
+    <Compile Include="PaperGesture.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RockGesture.cs" />
+    <Compile Include="ScissorsGesture.cs" />
+    <Compile Include="SpockGesture.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

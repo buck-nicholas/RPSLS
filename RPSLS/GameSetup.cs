@@ -23,9 +23,7 @@ namespace RPSLS
         }
         // member methods
         // init gameplay
-            // init scoreboard
-            // init getPlayerInfo
-            // if ai = true init ai
+        // init getPlayerInfo
         public void CreatePlayers()
         {
             Console.WriteLine("Select Game Mode: [1] Human vs. Human or [2] Human vs. AI");

@@ -26,7 +26,7 @@ namespace RPSLS
         {
             if (humanPlayer)
             {
-                Console.WriteLine("Please Enter Your Name");
+                Console.WriteLine(playerName + " Please Enter Your Name");
                 playerName = Console.ReadLine();
                 if (playerName.Length == 0)
                 {
