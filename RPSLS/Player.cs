@@ -6,35 +6,12 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Player
+    public class Player
     {
-        // member variables
+        // Member Variables
         public string playerName;
-        public bool humanPlayer; // if humanPlayer, set true, AI set false
         public int playerScore;
-
-        // constructor
-        public Player(string name, bool ai)
-        {
-            // constructor info
-            playerName = name;
-            humanPlayer = ai;
-            playerScore = 0;
-        }
-        // member methods
-        public void GetPlayerName()
-        {
-            if (humanPlayer)
-            {
-                Console.WriteLine(playerName + " Please Enter Your Name");
-                playerName = Console.ReadLine();
-                if (playerName.Length == 0)
-                {
-                    Console.WriteLine("You have entered an invalid response, please resubmit utilizing charactors A-Z and or numbers 0-9.");
-                    GetPlayerName();
-                }
-                Console.WriteLine("Welcome to the game " + playerName + ".");
-            }
-        }
+        public int playerSelection;
+        public bool playerHuman;
     }
 }

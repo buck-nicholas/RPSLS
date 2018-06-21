@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    public abstract class Gesture
+    class Gesture
     {
-        public string gestureName;
+        // member variables
+        public List<string> gestures;
 
-        public string[] winsAgainst = new string[2];
+        public Gesture()
+        {
+            gestures = new List<string>() { "rock", "paper", "scissors", "spock", "lizard" };
+        }
+
+        // Member methods
         
     }
 }
