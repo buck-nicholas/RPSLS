@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Program
+namespace RPSLS
 {
     class Program
     {
         static void Main(string[] args)
         {
-         
+            GamePlay runGame = new GamePlay();
+            Console.ReadLine();
         }
     }
 }
