@@ -19,6 +19,7 @@ namespace RPSLS
         {
             playerOne = new Human("Player One");
             playerTwo = new Human("Player Two");
+            aiUsed = false;
             winnerFound = false;
             DetermineGameMode();
             gamePlayMaster();
@@ -63,8 +64,17 @@ namespace RPSLS
             // get user selection
             Console.WriteLine(playerOne.playerName + " Please choose your gesture!");
             playerOne.playerSelection = playerOne.GetUserSelection();
-            Console.WriteLine(playerTwo.playerName + " Has Chosen");
-            playerTwo.playerSelection = playerTwo.GetUserSelection();
+
+            if (aiUsed)
+            {
+                Console.WriteLine(playerTwo.playerName + " Has Chosen");
+                playerTwo.playerSelection = playerTwo.GetUserSelection();
+            }
+            else
+            {
+                Console.WriteLine(playerTwo.playerName + " Please choose your gesture!");
+                playerTwo.playerSelection = playerTwo.GetUserSelection();
+            }
             // validate selection1
             // set selection equal to playerSelection
         }
@@ -100,7 +110,12 @@ namespace RPSLS
         }
         public bool CheckWinConditions()
         {
-            if (scoreBoard.playerOneScore == 2)
+            if (aiUsed && scoreBoard.playerTwoScore == 2)
+            {
+                winnerFound = true;
+                Console.WriteLine("You lose, better luck next time!");
+            }
+            else if (scoreBoard.playerOneScore == 2)
             {
                 winnerFound = true;
                 Console.WriteLine("Congratulations " + playerOne.playerName + " you won!");
