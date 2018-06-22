@@ -13,7 +13,6 @@ namespace RPSLS
         public string playerTwoName;
         public int playerOneScore;
         public int playerTwoScore;
-
         // Constructor
         public ScoreBoard(string playerOne, string playerTwo)
         {
@@ -23,7 +22,6 @@ namespace RPSLS
             playerTwoScore = 0;
             DisplayScoreBoard();
         }
-
         // member methods
         public void DisplayScoreBoard()
         {

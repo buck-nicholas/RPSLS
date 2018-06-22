@@ -12,12 +12,11 @@ namespace RPSLS
         public Human(string playerName)
         {
             this.playerName = playerName;
-            playerScore = 0;
         }
-
         // Member Methods
         public override int GetUserSelection()
         {
+            Console.WriteLine(playerName + " Please choose your gesture!");
             string userInput = Console.ReadLine();
             if (userInput != "1" && userInput != "2" && userInput != "3" && userInput != "4" && userInput != "5")
             {
@@ -26,6 +25,7 @@ namespace RPSLS
             }
             int convertedUserInput = int.Parse(userInput);
             convertedUserInput -= 1;
+            Console.WriteLine(playerName + " Has Chosen " + (convertedUserInput + 1));
             return convertedUserInput;
         }
     }

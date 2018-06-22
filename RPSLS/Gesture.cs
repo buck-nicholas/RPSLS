@@ -10,13 +10,9 @@ namespace RPSLS
     {
         // member variables
         public List<string> gestures;
-
         public Gesture()
         {
             gestures = new List<string>() { "rock", "paper", "scissors", "spock", "lizard" };
         }
-
-        // Member methods
-        
     }
 }

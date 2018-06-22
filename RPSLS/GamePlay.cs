@@ -14,7 +14,6 @@ namespace RPSLS
         public Player playerTwo;
         public ScoreBoard scoreBoard;
         public bool winnerFound;
-
         public GamePlay()
         {
             playerOne = new Human("Player One");
@@ -25,7 +24,6 @@ namespace RPSLS
             gamePlayMaster();
             GetPlayAgain();
         }
-
         // Member Methods
         public void DetermineGameMode()
         {
@@ -35,14 +33,12 @@ namespace RPSLS
             {
                 aiUsed = true;
                 playerTwo = new AI();
-                Console.WriteLine("***************Generating Computer**************");
             }
             else if (userInput != "1" && userInput != "2")
             {
                 Console.WriteLine("You have entered an invalid selection. Please try again. Example: 1");
                 DetermineGameMode();
             }
-
         }
         public void GetPlayAgain()
         {
@@ -61,7 +57,6 @@ namespace RPSLS
             {
                 Environment.Exit(0);
             }
-
         }
         public void SetPlayerName()
         {
@@ -73,30 +68,14 @@ namespace RPSLS
         public void GetPlayerSelection()
         {
             int counter = 1;
-            // instantiate gesture list
             Gesture gestureList = new Gesture();
-            // display list
             foreach (string gesture in gestureList.gestures)
             {
                 Console.WriteLine(counter + ": " + gesture);
                 counter++;
             }
-            // get user selection
-            Console.WriteLine(playerOne.playerName + " Please choose your gesture!");
             playerOne.playerSelection = playerOne.GetUserSelection();
-
-            if (aiUsed)
-            {
-                Console.WriteLine(playerTwo.playerName + " Has Chosen");
-                playerTwo.playerSelection = playerTwo.GetUserSelection();
-            }
-            else
-            {
-                Console.WriteLine(playerTwo.playerName + " Please choose your gesture!");
-                playerTwo.playerSelection = playerTwo.GetUserSelection();
-            }
-            // validate selection1
-            // set selection equal to playerSelection
+            playerTwo.playerSelection = playerTwo.GetUserSelection();
         }
         public void CalculateResults()
         {
@@ -147,7 +126,5 @@ namespace RPSLS
             }
             return winnerFound;
         }
-
-
     }
 }
