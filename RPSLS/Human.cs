@@ -25,7 +25,9 @@ namespace RPSLS
             }
             int convertedUserInput = int.Parse(userInput);
             convertedUserInput -= 1;
-            Console.WriteLine(playerName + " Has Chosen " + (convertedUserInput + 1));
+            chosenGesture = gestureList.gestures.ElementAt(convertedUserInput);
+            Console.WriteLine(playerName + " Has Chosen " + chosenGesture);
+            //Console.WriteLine(playerName + " Has Chosen " + (convertedUserInput + 1));
             return convertedUserInput;
         }
     }

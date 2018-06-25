@@ -12,6 +12,8 @@ namespace RPSLS
         public string playerName;
         public int playerSelection;
         public bool playerHuman;
+        public Gesture gestureList = new Gesture();
+        public string chosenGesture;
 
         public virtual int GetUserSelection()
         {

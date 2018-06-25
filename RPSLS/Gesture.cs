@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RPSLS
 {
-    class Gesture
+    public class Gesture
     {
         // member variables
         public List<string> gestures;

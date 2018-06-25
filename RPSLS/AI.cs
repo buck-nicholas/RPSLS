@@ -9,6 +9,7 @@ namespace RPSLS
     public class AI : Player
     {
         // member variables
+        
         // Constructor
         public AI()
         {
@@ -20,8 +21,10 @@ namespace RPSLS
         {
             int randomNumber;
             Random rnd = new Random();
-            randomNumber = rnd.Next(1,6);
-            Console.WriteLine(playerName + " Has Chosen " + randomNumber);
+            randomNumber = rnd.Next(1, 6);
+            randomNumber -= 1;
+            chosenGesture = gestureList.gestures.ElementAt(randomNumber);
+            Console.WriteLine(playerName + " Has Chosen " + chosenGesture);
             return randomNumber;
         }
     }
